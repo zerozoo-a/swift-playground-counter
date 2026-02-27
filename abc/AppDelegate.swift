@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController()
+        let navigationController = SwipeNavigationController()
         
         let coordinator = AppCoordinator(navigationController: navigationController)
         self.coordinator = coordinator
