@@ -11,6 +11,7 @@ import RxSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var coordinator: AppCoordinator?
     let disposeBag = DisposeBag()
 
 
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         
         let coordinator = AppCoordinator(navigationController: navigationController)
-        
+        self.coordinator = coordinator
+
         coordinator.start()
             .subscribe()
             .disposed(by: disposeBag)

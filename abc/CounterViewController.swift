@@ -17,16 +17,19 @@ class CounterViewController: UIViewController, ViewModelBindable {
     let countLabel = UILabel()
     let plusButton = UIButton(type: .system)
     let minusButton = UIButton(type: .system)
+    let goStringButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    /** 이벤트 콜백 함수와 view element의 바인딩 */
     func bindViewModel() {
         let input = CounterViewModel.Input(
             plusTap: PublishRelay<Void>(),
-            minusTap: PublishRelay<Void>()
+            minusTap: PublishRelay<Void>(),
+            goStringTap: PublishRelay<Void>()
         )
         
         plusButton.rx.tap
@@ -35,6 +38,9 @@ class CounterViewController: UIViewController, ViewModelBindable {
         
         minusButton.rx.tap
             .bind(to: input.minusTap)
+            .disposed(by: disposeBag)
+        
+        goStringButton.rx.tap.bind(to: input.goStringTap)
             .disposed(by: disposeBag)
         
         let output = viewModel.transform(input: input)
@@ -49,6 +55,7 @@ class CounterViewController: UIViewController, ViewModelBindable {
         countLabel.font = .systemFont(ofSize: 60)
         countLabel.textAlignment = .center
         countLabel.text = "0"
+        countLabel.textColor = .black
         
         plusButton.setTitle("+", for: .normal)
         plusButton.titleLabel?.font = .systemFont(ofSize: 40)
@@ -56,19 +63,24 @@ class CounterViewController: UIViewController, ViewModelBindable {
         minusButton.setTitle("-", for: .normal)
         minusButton.titleLabel?.font = .systemFont(ofSize: 40)
         
-        let stack = UIStackView(arrangedSubviews: [minusButton, countLabel, plusButton])
+        goStringButton.setTitle("Go String", for: .normal)
         
-        stack.axis = .horizontal
-        stack.spacing = 40
+        
+        let counterStack = UIStackView(arrangedSubviews: [minusButton, countLabel, plusButton])
+        counterStack.axis = .horizontal
+        counterStack.spacing = 40
+        counterStack.alignment = .center
+
+        let stack = UIStackView(arrangedSubviews: [counterStack, goStringButton])
+        stack.axis = .vertical
+        stack.spacing = 30
         stack.alignment = .center
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
+
         view.addSubview(stack)
         NSLayoutConstraint.activate([
-            stack.centerXAnchor.constraint(equalTo:
-view.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo:
-view.centerYAnchor)
+            stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
 
     }

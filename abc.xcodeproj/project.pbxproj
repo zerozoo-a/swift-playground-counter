@@ -40,6 +40,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				Pattern/CoordinatorProtocol.swift,
+				Pattern/LoginCoordinator.swift,
+				Pattern/PatternAppCoordinator.swift,
 			);
 			target = 8BF599AE2F41E69A008D3E78 /* abc */;
 		};
@@ -312,6 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E2NU8747F2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = abc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -339,6 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E2NU8747F2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = abc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
