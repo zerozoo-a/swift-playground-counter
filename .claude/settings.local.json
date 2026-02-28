@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/yoon-youngjoo/Downloads/05_SWIFT/abc log --oneline)",
+      "Bash(git -C /Users/yoon-youngjoo/Downloads/05_SWIFT/abc config --list)",
+      "Bash(git reset:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(xcodebuild:*)",
+      "WebSearch",
+      "WebFetch(domain:gist.github.com)",
+      "Bash(git rm:*)"
+    ]
+  }
+}
