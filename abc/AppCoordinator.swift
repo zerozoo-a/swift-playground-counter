@@ -29,6 +29,13 @@ class AppCoordinator: ReactiveCoordinator<Void> {
                     .disposed(by: self.disposeBag)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.goHelloWorld.subscribe(onNext: { [weak self] in guard let self = self else { return }
+            let helloWorldCoordinator = HelloWorldCoordinator(navigationController: self.navigationController)
+            helloWorldCoordinator.start()
+                .subscribe()
+                .disposed(by: self.disposeBag)
+        }).disposed(by: self.disposeBag)
 
         return Observable.never()
     }

@@ -18,6 +18,7 @@ class CounterViewController: UIViewController, ViewModelBindable {
     let plusButton = UIButton(type: .system)
     let minusButton = UIButton(type: .system)
     let goStringButton = UIButton(type: .system)
+    let goHelloWorldButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,8 @@ class CounterViewController: UIViewController, ViewModelBindable {
         let input = CounterViewModel.Input(
             plusTap: PublishRelay<Void>(),
             minusTap: PublishRelay<Void>(),
-            goStringTap: PublishRelay<Void>()
+            goStringTap: PublishRelay<Void>(),
+            goHelloWorldTap: PublishRelay<Void>()
         )
         
         plusButton.rx.tap
@@ -41,6 +43,9 @@ class CounterViewController: UIViewController, ViewModelBindable {
             .disposed(by: disposeBag)
         
         goStringButton.rx.tap.bind(to: input.goStringTap)
+            .disposed(by: disposeBag)
+        
+        goHelloWorldButton.rx.tap.bind(to: input.goHelloWorldTap)
             .disposed(by: disposeBag)
         
         let output = viewModel.transform(input: input)
@@ -65,13 +70,15 @@ class CounterViewController: UIViewController, ViewModelBindable {
         
         goStringButton.setTitle("Go String", for: .normal)
         
+        goHelloWorldButton.setTitle("Go HelloWorld", for: .normal)
+        
         
         let counterStack = UIStackView(arrangedSubviews: [minusButton, countLabel, plusButton])
         counterStack.axis = .horizontal
         counterStack.spacing = 40
         counterStack.alignment = .center
 
-        let stack = UIStackView(arrangedSubviews: [counterStack, goStringButton])
+        let stack = UIStackView(arrangedSubviews: [counterStack, goStringButton, goHelloWorldButton])
         stack.axis = .vertical
         stack.spacing = 30
         stack.alignment = .center

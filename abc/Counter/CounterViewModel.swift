@@ -11,16 +11,19 @@ import RxRelay
 
 class CounterViewModel: InputOutputAttachable {
     let goString = PublishRelay<Void>()
+    let goHelloWorld = PublishRelay<Void>()
     
     struct Input {
         let plusTap: PublishRelay<Void>
         let minusTap: PublishRelay<Void>
         let goStringTap: PublishRelay<Void>
+        let goHelloWorldTap: PublishRelay<Void>
     }
     
     struct Output {
         let count: BehaviorRelay<Int>
         let goString: PublishRelay<Void>
+        let goHelloWorld: PublishRelay<Void>
     }
     
     let disposeBag = DisposeBag()
@@ -39,8 +42,10 @@ class CounterViewModel: InputOutputAttachable {
         input.goStringTap.bind(to: goString)
             .disposed(by: disposeBag)
         
+        input.goHelloWorldTap.bind(to: goHelloWorld)
+            .disposed(by: disposeBag)
         
-        return Output(count: count, goString: goString)
+        return Output(count: count, goString: goString, goHelloWorld: goHelloWorld)
         
     }
 }
