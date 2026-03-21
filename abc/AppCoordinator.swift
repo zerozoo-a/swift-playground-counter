@@ -14,28 +14,28 @@ import RxCocoa
 class AppCoordinator: ReactiveCoordinator<Void> {
     
     override func start() -> Observable<Void> {
-        let viewModel = CounterViewModel()
-        var viewController = CounterViewController()
+        let viewModel = HomeViewModel()
+        var viewController = HomeViewController()
         viewController.bind(viewModel: viewModel)
 
         navigationController.viewControllers = [viewController]
 
-        viewModel.goString
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                let stringCoordinator = StringCoordinator(navigationController: self.navigationController)
-                stringCoordinator.start()
-                    .subscribe()
-                    .disposed(by: self.disposeBag)
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.goHelloWorld.subscribe(onNext: { [weak self] in guard let self = self else { return }
-            let helloWorldCoordinator = HelloWorldCoordinator(navigationController: self.navigationController)
-            helloWorldCoordinator.start()
-                .subscribe()
-                .disposed(by: self.disposeBag)
-        }).disposed(by: self.disposeBag)
+//        viewModel.goString
+//            .subscribe(onNext: { [weak self] in
+//                guard let self = self else { return }
+//                let stringCoordinator = StringCoordinator(navigationController: self.navigationController)
+//                stringCoordinator.start()
+//                    .subscribe()
+//                    .disposed(by: self.disposeBag)
+//            })
+//            .disposed(by: disposeBag)
+//        
+//        viewModel.goHelloWorld.subscribe(onNext: { [weak self] in guard let self = self else { return }
+//            let helloWorldCoordinator = HelloWorldCoordinator(navigationController: self.navigationController)
+//            helloWorldCoordinator.start()
+//                .subscribe()
+//                .disposed(by: self.disposeBag)
+//        }).disposed(by: self.disposeBag)
 
         return Observable.never()
     }
