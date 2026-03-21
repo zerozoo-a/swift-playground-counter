@@ -1,0 +1,18 @@
+# Build
+build/
+DerivedData/
+
+# Xcode user data
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# DS_Store
+.DS_Store
+
+# SPM
+.build/
+*.resolved
+
+# Claude
+.claude/settings.local.json

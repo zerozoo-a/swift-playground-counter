@@ -8,21 +8,14 @@
 import SwiftUI
 
 struct RootAppTabView: View {
-    @State private var selectedAppTab: AppTab = .home
+    @State private var selectedAppTab: AppTab = .todo
 
     var body: some View {
         VStack(spacing: 0) {
             switch selectedAppTab {
+            case .todo: TodoSwiftUIView()
             case .home:    HomeSwiftUIView()
             case .counter: CounterSwiftUIView()
-            case .todo: TodoSwiftUIView()
-        
-            }
-            
-            Button {} label: {
-                VStack(spacing: 4) {
-                    Text("yes~!")
-                }
             }
 
             Spacer(minLength: 0)
