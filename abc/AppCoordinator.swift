@@ -15,7 +15,7 @@ import SwiftUI
 class AppCoordinator: ReactiveCoordinator<Void> {
     
     override func start() -> Observable<Void> {
-        let swiftUIVC = UIHostingController(rootView: RootTabView())
+        let swiftUIVC = UIHostingController(rootView: RootAppTabView())
         navigationController.viewControllers = [swiftUIVC]
 
 //        viewModel.goString

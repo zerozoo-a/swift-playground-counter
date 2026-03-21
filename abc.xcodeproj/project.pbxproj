@@ -35,25 +35,9 @@
 		8BF599CF2F41E69C008D3E78 /* abcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = abcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8BF599D72F41E69C008D3E78 /* Exceptions for "abc" folder in "abc" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-				Pattern/CoordinatorProtocol.swift,
-				Pattern/LoginCoordinator.swift,
-				Pattern/PatternAppCoordinator.swift,
-			);
-			target = 8BF599AE2F41E69A008D3E78 /* abc */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8BF599B12F41E69A008D3E78 /* abc */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8BF599D72F41E69C008D3E78 /* Exceptions for "abc" folder in "abc" target */,
-			);
 			path = abc;
 			sourceTree = "<group>";
 		};
@@ -317,7 +301,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E2NU8747F2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = abc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -345,7 +328,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E2NU8747F2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = abc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
