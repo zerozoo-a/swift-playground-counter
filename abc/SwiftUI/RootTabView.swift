@@ -12,6 +12,9 @@ struct RootTabView: View {
         TabView {
             HomeSwiftUIView()
                 .tabItem { Label("Home", systemImage: "house") }
+
+            CounterSwiftUIView()
+                .tabItem { Label("Counter", systemImage: "plus.circle") }
         }
     }
 }
