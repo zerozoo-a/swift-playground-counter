@@ -10,15 +10,14 @@ import UIKit
 import RxSwift
 import RxRelay
 import RxCocoa
+import SwiftUI
 
 class AppCoordinator: ReactiveCoordinator<Void> {
     
     override func start() -> Observable<Void> {
         let viewModel = HomeViewModel()
-        var viewController = HomeViewController()
-        viewController.bind(viewModel: viewModel)
-
-        navigationController.viewControllers = [viewController]
+        let swiftUIVC = UIHostingController(rootView: HomeSwiftUIView())
+        navigationController.viewControllers = [swiftUIVC]
 
 //        viewModel.goString
 //            .subscribe(onNext: { [weak self] in
