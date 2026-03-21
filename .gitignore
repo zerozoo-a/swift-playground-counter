@@ -1,18 +1,44 @@
-# Build
-build/
-DerivedData/
+# Xcode
 
-# Xcode user data
-*.xcuserstate
+## User settings
 xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Xcode workspace/settings (auto-generated)
 *.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+*.xcsettings
+*.xcuserstate
 
-# DS_Store
-.DS_Store
-
-# SPM
+# Swift Package Manager
 .build/
-*.resolved
+build/
+
+# Carthage
+Carthage/Build/
+
+# CocoaPods
+# Pods/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# macOS
+.DS_Store
 
 # Claude
 .claude/settings.local.json
